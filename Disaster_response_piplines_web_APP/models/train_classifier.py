@@ -38,6 +38,15 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    """
+    Tokenize text into words
+
+    Parameters:
+    text(str): a text to be tokenized
+
+    Output:
+    clear_tokens(list): a list of words 
+    """
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
 
@@ -50,6 +59,17 @@ def tokenize(text):
 
 
 def build_model():
+
+	"""
+	Building a gridsearch model
+
+	Parameters:
+	None
+
+	Outputs:
+	cv(gridseachcv object): a model of gridsearch
+
+	"""
 
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
@@ -73,6 +93,15 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+	'''
+	evaluate the model, and print the accuracy report of each category
+
+	Parameters:
+	model: the gridseach model
+	X_test(2darray): X testing data
+	Y_test(2darray): Y testing data
+	category_names(list): name list of all categories
+	'''
 
     y_pred = model.predict(X_test)
 
@@ -82,6 +111,13 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+	"""
+	save the trained model into pickle file
+
+	Parameter:
+	model: the trained model
+	model_filepath(str): the path of the pickle file which is going to be saved
+	"""
     with open(model_filepath, 'wb') as f:
         pickle.dump(model, f)
 
