@@ -21,7 +21,7 @@ This is a project in Udacity Data Scientist Nanodegree. It aims to develop an AP
 
 There are two Jupyter notebooks in the root directory. It shows the details of the ETL and ML pipeolines.
 In the "Disaster_response_piplines_web_APP" fold, it contains all the files to run the Web app. The "Readme " file describes the details of running the APP.
-In the "data" fold, it contains all the datasets used in this project. It is provided by Figure Eight [here](https://www.figure-eight.com)
+In the "data" fold, it contains all the datasets used in this project. It is provided by [Figure Eight](https://www.figure-eight.com)
 
 
 ## Licensing, Authors, Acknowledgements<a name="licensing"></a>
